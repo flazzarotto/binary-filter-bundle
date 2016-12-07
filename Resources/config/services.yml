@@ -1,0 +1,10 @@
+services:
+    imagine.data.loader.binary_loader:
+        class: Flazzarotto\BinaryFilterBundle\BinaryFilter\BinaryLoader
+        arguments: ["@liip_imagine"]
+        tags:
+            - { name: "liip_imagine.binary.loader", loader: binary_image_data_loader }
+
+    image.back_filter:
+        class: Flazzarotto\BinaryFilterBundle\BinaryFilter\ImageBackFilter
+        arguments: ["@liip_imagine.data.manager","@liip_imagine.filter.manager","%kernel.root_dir%"]

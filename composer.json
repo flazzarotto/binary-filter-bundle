@@ -1,0 +1,24 @@
+{
+  "name": "flazzarotto/binary-filter",
+  "description": "Easy Liip Imagine server-side image filter for both files and binary data",
+  "version": "0.1.0",
+  "type": "library",
+  "keywords": ["Image", "filter", "resizer", "server", "liip_imagine", "symfony", "binary", "picture"],
+  "require": {
+    "liip/imagine-bundle": "^1.6"
+  },
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Fabrice Lazzarotto",
+      "email": "fabrice.lazzarotto@gmail.com"
+    }
+  ],
+  "autoload": {
+        "psr-4": {
+            "Flazzarotto\\BinaryFilterBundle\\": ""
+        }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
