@@ -66,7 +66,7 @@ class ImageBackFilter {
      * @return string
      */
     private function generateFinalPath($webDirRelativeOutputPath) {
-        return preg_replace("#/+#","/",$this->webDir."/").$webDirRelativeOutputPath;
+        return preg_replace("#/+#","/",$this->webDir."/".$webDirRelativeOutputPath);
     }
 
 }
