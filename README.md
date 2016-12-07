@@ -5,14 +5,15 @@ This Symfony3 bundle use `liip/imagine` to allow easy php-side image filter.
  
 ## Set up
 
-1. Run `composer require flazzarotto/binary-filter dev-master`
+1. Run `composer require flazzarotto/binary-filter`
 
 2. Modify you AppKernel.php:
 
    ```php
    $bundles = [
-     // bunch of other bundles
-     new Flazzarotto\BinaryFilterBundle\BinaryFilterBundle(), // <= add this line
+     // add following lines
+     new \Liip\ImagineBundle\LiipImagineBundle(),
+     new Flazzarotto\BinaryFilterBundle\BinaryFilterBundle()
    ];
    ```
 
@@ -40,7 +41,7 @@ HOW TO USE
 The main goal of this package is to allow you to resize, generate thumbnails on the fly, in controllers, commands,
 services... You can provide both binary data and filepaths to the service.
 
-Example of use:
+Example:
 
 ```php
 $filter = $this->get('image.back_filter'); // the BinaryFilter service
