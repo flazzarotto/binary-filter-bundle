@@ -24,8 +24,9 @@ class BinaryFilter {
         $this->dm = $dataManager;
         $this->fm = $filterManager;
 
+
         $this->result = $this->originalData = $originalData;
-        $this->finalPath = realpath($finalPath);
+        $this->finalPath = realpath(dirname($finalPath))."/".basename($finalPath);
         $this->defaultFilter = $defaultFilter;
     }
 
