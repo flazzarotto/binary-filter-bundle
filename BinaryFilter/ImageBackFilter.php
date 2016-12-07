@@ -52,7 +52,7 @@ class ImageBackFilter {
             throw new FileNotFoundException('Input path '.$absolutePath. ' is not a file');
         }
 
-        $this->loadBinary(file_get_contents($absolutePath), $webDirRelativeOutputPath);
+        return $this->loadBinary(file_get_contents($absolutePath), $webDirRelativeOutputPath);
     }
 
     public function loadBinary($binary, $webDirRelativeOutputPath=null) {

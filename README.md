@@ -47,10 +47,15 @@ $filter = $this->get('image.back_filter'); // the BinaryFilter service
 
 $filter ->setDefaultFilter('my_filter') // filter as defined in your config.yml - optional
 
-        ->loadBinary($data,$outputFile) // $data as binary, $outputFile as path relative to directory 
+        ->loadBinary($data,$outputFile) // $data as binary, $outputFile as path relative to directory - return a BinaryFilter object
         // OR
-        ->loadFile($path) // provide absolute path to your input image
+        ->loadFile($path) // provide absolute path to your input image - return a BinaryFilter object
 
         ->applyFilter($filter) // you can override default filter - optional if default filter has been given
-        ->outputFile(true); // save filtered imag to output file, set true to allow overriding if file exists
+        
+        ->getMimeType(); // optional; useful to determine extension or for direct download
+        
+        ->outputFile(true); // save filtered image to output file; set parameter to true to allow overriding if file exists
+        // OR
+        ->getFilteredBinary(); // returns picture as binary data
 ```
