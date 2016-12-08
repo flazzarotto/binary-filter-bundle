@@ -19,15 +19,22 @@ class BinaryFilter {
     private $mime_type;
 
     public function __construct(DataManager $dataManager, FilterManager $filterManager,
-                                $originalData, $finalPath, $defaultFilter=null)
+                                $originalData, $finalPath = null, $defaultFilter=null)
     {
         $this->dm = $dataManager;
         $this->fm = $filterManager;
 
+        if ($finalPath !== null) {
+            $this->setOutputPath($finalPath);
+        }
 
         $this->result = $this->originalData = $originalData;
-        $this->finalPath = realpath(dirname($finalPath))."/".basename($finalPath);
+
         $this->defaultFilter = $defaultFilter;
+    }
+
+    public function setOutputPath($absolutePath) {
+        $this->finalPath = realpath(dirname($absolutePath))."/".basename($absolutePath);
     }
 
     public function applyFilter($filter=null) {
